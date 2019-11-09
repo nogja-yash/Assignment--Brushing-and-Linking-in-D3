@@ -108,3 +108,20 @@ You will receive full marks if:
     * Three-way brushing and linking works between the table, line chart, and scatterplot.
     * Styles are consistent across views.
 
+## Template Setup Instructions (For Instructors)
+
+It is necessary if using GitHub classroom to set up GitHub pages for the students, as they do not have admin permissions on their repository. To do this, we need to create and move everything to the `gh-pages` branch and delete the `master` branch.
+
+1. Commit the files to the `master` branch on GitHub.
+
+1. `git branch gh-pages`
+
+1. `git checkout gh-pages`
+
+1. `git branch -D master`
+
+1. `git push origin gh-pages`
+
+1. On GitHub, go to `Settings`->`Branches` and set the default branch to `gh-pages`.
+
+1. `git push origin :master`

@@ -4,13 +4,13 @@ This assignment will help you get started with brushing and linking. Please look
 
 ## The Associated GitHub Pages Website
 
-This web page is served automatically from the default `gh-pages` branch at https://northeastern-ds-4200-f19-staff.github.io/Assignment--Brushing-and-Linking-in-d3/
+This web page is served automatically from the default `gh-pages` branch at https://northeastern-ds-4200-f19-staff.github.io/assignment--brushing-and-linking-in-d3/
 
 ## Setup
 
 **Under no circumstances should you be editing files via the GitHub user interface.** Do all your edits locally after cloning the repository.
 
-1. Clone this repository to your local machine. E.g., in your terminal / command prompt `CD` to where you want this the folder for this activity to be. Then run `git clone <YOUR_REPO_URL>`.
+1. Clone this repository to your local machine. E.g., in your terminal / command prompt `CD` to where you want this the folder for this activity to be. Then run `git clone <YOUR_REPO_URL>`
 
 1. In `README.md` (this file) update the URL above to point to your GitHub pages website.
 
@@ -108,9 +108,12 @@ You will receive full marks if:
     * Three-way brushing and linking works between the table, line chart, and scatterplot.
     * Styles are consistent across views.
 
-## Template Setup Instructions (For Instructors)
+## Template Repository Setup (For Instructors)
 
-It is necessary if using GitHub classroom to set up GitHub pages for the students, as they do not have admin permissions on their repository. To do this, we need to create and move everything to the `gh-pages` branch and delete the `master` branch.
+
+### GitHub Pages
+
+It is necessary if using GitHub Classroom to set up GitHub pages for the students, as they do not have admin permissions on their repository. To do this, we need to create and move everything to the `gh-pages` branch and delete the `master` branch.
 
 1. Commit the files to the `master` branch on GitHub.
 
@@ -125,3 +128,7 @@ It is necessary if using GitHub classroom to set up GitHub pages for the student
 1. On GitHub, go to `Settings`->`Branches` and set the default branch to `gh-pages`.
 
 1. `git push origin :master`
+
+### Template Repository
+
+1. On GitHub, go to `Settings` and check the box for `Template repository` at the top. This makes GitHub Classroom copies much faster.

@@ -12,7 +12,6 @@ This web page is served automatically from the default `gh-pages` branch at http
 
 1. Clone this repository to your local machine. E.g., in your terminal / command prompt `CD` to where you want this the folder for this activity to be. Then run `git clone <YOUR_REPO_URL>`
 
-1. In `README.md` (this file) update the URL above to point to your GitHub pages website.
 
 1. `CD` or open a terminal / command prompt window into the cloned folder.
 
@@ -57,9 +56,15 @@ Each folder has an explanatory `README.md` file.
 
 ## Instructions
 
+
+
 You will be creating a new table that is connected to the existing scatterplot and line chart using brushing and linking.
 Make your edits and commit major versions to your git repository.
 **Under no circumstances should you be editing files via the GitHub user interface.** 
+
+1. In `README.md` (this file) update the URL above with your actual GitHub pages URL.
+
+1. In `index.html` update the GitHub repo URL with the URL of your repository. It is in the span with `id="forkongithub"`.
 
 1. Create a new JavaScript file `js/table.js`.
 
@@ -95,7 +100,7 @@ You will receive full marks if:
 * Instructions are followed
     * Everything is submitted by the due date following the instructions above.
     * Any folders/files are properly named, located as specified, and contain what is expected.
-    * Your web page link is correctly updated at the top of this `README.md` file.
+    * Your web page link is correctly updated at the top of this `README.md` file and in the `Fork me on GitHub` banner.
 
 * Coding was done properly:
     * Your code was regularly committed and not edited via the GitHub user interface online.* 

@@ -12,7 +12,6 @@ This web page is served automatically from the default `gh-pages` branch at http
 
 1. Clone this repository to your local machine. E.g., in your terminal / command prompt `CD` to where you want this the folder for this activity to be. Then run `git clone <YOUR_REPO_URL>`
 
-
 1. `CD` or open a terminal / command prompt window into the cloned folder.
 
 1. Start a simple python webserver. E.g., one of these commands:
@@ -56,8 +55,6 @@ Each folder has an explanatory `README.md` file.
 
 ## Instructions
 
-
-
 You will be creating a new table that is connected to the existing scatterplot and line chart using brushing and linking.
 Make your edits and commit major versions to your git repository.
 **Under no circumstances should you be editing files via the GitHub user interface.** 
@@ -75,7 +72,6 @@ Make your edits and commit major versions to your git repository.
     | 1996 | 16.6    | 7.7          | 5.7    |
     | 1997 | 16.7    | 6.8          | 5.3    |
     | ...  | ...     | ...          | ...    |
-    
 
 1. Add the necessary `<div>` code to `index.html` to place your table directly below the existing visualizations.
 
@@ -103,7 +99,7 @@ You will receive full marks if:
     * Your web page link is correctly updated at the top of this `README.md` file and in the `Fork me on GitHub` banner.
 
 * Coding was done properly:
-    * Your code was regularly committed and not edited via the GitHub user interface online.* 
+    * Your code was regularly committed and not edited via the GitHub user interface online.
     * You have clear, commented, and validated code.
     * Your web page loads properly and looks as expected in the latest Firefox and Chrome browsers.
     * Any code from other sources (modified or copied straight) is acknowledged.
@@ -115,7 +111,6 @@ You will receive full marks if:
     * None of the visualizations change size or move on the screen as you interact with them.
 
 ## Template Repository Setup (For Instructors)
-
 
 ### GitHub Pages
 

@@ -76,7 +76,7 @@ Make your edits and commit major versions to your git repository.
 
 1. Add any necessary CSS to `style.css` for displaying your table.
 
-1. Add code to `js/visualization.js` to create your table in the appropriate `<div>`.
+1. Add code to `js/visualization.js` to create your table in the appropriate `<div>`. It should be of a set height. E.g., it should not resize as you select elements. You may need a scroll bar.
 
 1. Add brushing and highlighting functionality to your table to match both function and style of the scatterplot and line chart.
 
@@ -107,6 +107,7 @@ You will receive full marks if:
     * Your table displays all the expected data.
     * Three-way brushing and linking works between the table, line chart, and scatterplot.
     * Styles are consistent across views.
+    * None of the visualizations change size or move on the screen as you interact with them.
 
 ## Template Repository Setup (For Instructors)
 

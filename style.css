@@ -90,7 +90,7 @@ h1, h2, h3 {
 }
 @media screen and (min-width:1000px){
 	#forkongithub{
-		position:fixed;
+		position:absolute;
 		display:block;
 		top:0;
 		right:0;

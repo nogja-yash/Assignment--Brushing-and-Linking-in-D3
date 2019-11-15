@@ -85,9 +85,90 @@ Make your edits and commit major versions to your git repository.
 
 1. Ensure your code passes the [W3 validator](https://validator.w3.org/).
 
+
+
+The final interaction should look like this (without the concentric red rings on click):
+
+![Interaction example](interaction.gif)
+
 ## Submission Instructions
 
 1. Submit a URL to your GitHub Page (same as the link you edited at the top) to [the associated assignment on Canvas](https://canvas.instructure.com/courses/1711075/assignments/12962345/).
+
+## Tips and Tricks
+
+### How to write a table to the DOM using D3
+
+D3 is not just an SVG data binding and manipulation library, though that is what most of the examples show.
+It is actually a general-purpose DOM data binding and manipulation library.
+You can thus use it to manipulate arbitrary HTML tags too, e.g., the tags for tables: `<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`.
+
+You can [search for at examples online](https://www.google.com/search?&q=d3+html+table), e.g., Jonah Williams' [Interactive HTML Table I](http://bl.ocks.org/jonahwilliams/cc2de2eedc3896a3a96d).
+Note that this is using D3 version 3 while you are using D3 version 5, so some changes may be necessary.
+
+### Function/method chaining
+
+D3, and this exercise, use [function chaining](https://en.wikipedia.org/wiki/Method_chaining) to apply several changes to the same visualization.
+
+You don't have to use chaining.
+E.g., instead of this:
+```js
+d3.select("body")
+  .append("p")
+    .text("Hello, world!");
+```
+you can write:
+```js
+var body = d3.select("body");
+var p = body.append("p");
+p.text("Hello, world!");
+```
+
+### JS statements: let vs. var vs. const
+
+To make our code more modular, reusable, and error-free we are limiting variable scope to the relevant parts of the code.
+In part, we do this by using [`let` statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) instead of [`var`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var) by default so as to not set global variables.
+We are also using [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) to create read-only references.
+
+### ES6 Arrow functions `=>`
+
+Note that this exercise uses the [ES6 Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+E.g., instead of writing `function(d){ return d.name; }` we write `d => d.name` or `d => { return d.name; }`. We would use the latter version with surrounding `{...}` when we need multiple lines of code vs. just a simple expression.
+
+### How to implement interaction on the table
+
+[`d3.brush`](https://github.com/d3/d3-brush) would be hard to use directly atop an HTML `table`. Instead, think about how you can re-create similar functionality by listening for DOM events. D3's `d3-selection` module can listen for any of the [standard DOM events](https://github.com/d3/d3-selection#handling-events) using the `selection.on(typenames[, listener[, options]])` function.
+
+E.g., to provide row highlighting on mouseover a la Jonah Williams' [Interactive HTML Table I](http://bl.ocks.org/jonahwilliams/cc2de2eedc3896a3a96d) you can listen for [Mouse Events](https://developer.mozilla.org/en-US/docs/Web/Events#Mouse_events) like so:
+```js
+d3.selectAll("tr")
+    .on("mouseover", (d, i, elements) => {
+      d3.select(elements[i]).classed("highlighted", true)
+    })
+    .on("mouseout", (d, i, elements) => {
+      d3.select(elements[i]).classed("highlighted", false)
+    });
+```
+This uses the ES6 Arrow functions `=>` (see above).
+Note that using the arrow functions we are not able to use `d3.select(this)` like you see in many esp. older D3 examples.
+See [this post](https://medium.com/@yonester/on-d3-and-arrow-functions-b6559c1cebb8) for a discussion.
+
+### How we are sending selection updated events
+
+D3 has a module [`d3-dispatch`](https://github.com/d3/d3-dispatch) for emiting and listening for events, which we use to coordinate selection updates between our linked views.
+
+E.g.,
+```js
+let dispatcher = d3.dispatch("selectionUpdated");
+dispatcher.on("selectionUpdated", callback1);
+```
+However, to have multiple listeners for that same event you would need to have unique suffixes for the same string beginning with '`.`'.
+E.g., to have both the line chart and table listening to scatterplot updates we could have
+```js
+dispatcher.on("selectionUpdated.sp-to-lc", callback1);
+dispatcher.on("selectionUpdated.sp-to-tab", callback1);
+```
+where `"sp-to-lc"` and `"sp-to-tab"` are arbitrary but written here to be informative.
 
 ## Grading
 
@@ -110,7 +191,7 @@ You will receive full marks if:
     * Styles are consistent across views.
     * None of the visualizations change size or move on the screen as you interact with them.
 
-## Template Repository Setup (For Instructors)
+## Template Repository Setup (For Instructors Only)
 
 ### GitHub Pages
 

@@ -18,7 +18,7 @@ function scatterplot() {
     yValue = d => d[1],
     xLabelText = "",
     yLabelText = "",
-    yLabelOffsetPx = 0,    
+    yLabelOffsetPx = 0,
     xScale = d3.scaleLinear(),
     yScale = d3.scaleLinear(),
     ourBrush = null,

@@ -127,7 +127,8 @@ function linechart() {
         ] = d3.event.selection;
         points.classed("selected", d =>
           x0 <= X(d) && X(d) <= x1 && y0 <= Y(d) && Y(d) <= y1
-        );
+        ).style("stroke", "red")
+            .data();
 
         // Get the name of our dispatcher's event
         let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
@@ -137,7 +138,6 @@ function linechart() {
       }
       
       function brushEnd() {
-        // We don't want an infinite recursion
         if (d3.event.sourceEvent.type != "end") {
           d3.select(this).call(brush.move, null);
         }
